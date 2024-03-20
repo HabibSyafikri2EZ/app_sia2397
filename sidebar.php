@@ -24,7 +24,7 @@ if(isset($_GET['modul']))
     }elseif($_GET['modul']=="jurnal-umum"){
         $active_jurnalumum="active";
     }
-}else{
+else{
     $active_dashboard="active";
 }
 ?>
