@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-3 text-bg-dark" style="min-height:100vh">
                 <div class="text-center pt-4">
-                    <i class="bi bi-cash-coin fs-1 text-success"></i>
+                    <i class="bi bi-bank fs-1 text-success"></i>
                     <h3>Sistem Informasi Akuntansi</h3>
                 </div >
                 <div class="pt-4">
