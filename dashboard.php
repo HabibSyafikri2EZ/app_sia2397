@@ -15,8 +15,8 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 text-bg-dark" style="min-height:100vh">
-                <div class="text-center pt-4">
+            <div class="col-md-3 text-bg-white" style="min-height:100vh">
+                <div class="text-center pt-4 text-bg-dark ">
                     <i class="bi bi-bank fs-1 text-success"></i>
                     <h2>Sistem Informasi Akuntansi</h2>
                 </div >

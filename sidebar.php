@@ -30,43 +30,43 @@ else{
 ?>
 <ul class="nav nav-pills flex-column ms-2">
     <li class="nav-item">
-        <a href="dashboard.php" class="nav-link text-white <?= $active_dashboard;?>">
-            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+        <a href="dashboard.php" class="nav-link text-dark <?= $active_dashboard;?>">
+            <i class="bi bi-speedometer2 me-2 fs-2 "></i>Dashboard
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=akun" class="nav-link text-white <?= $active_akun;?>">
-            <i class="bi bi-cash-stack me-2"></i>Data Akun
+        <a href="?modul=akun" class="nav-link text-dark <?= $active_akun;?>">
+            <i class="bi bi-cash-stack me-2 fs-2 "></i>Data Akun
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=transaksi" class="nav-link text-white <?= $active_transaksi;?>">
-            <i class="bi bi-cart-check-fill me-2"></i>Transaksi
+        <a href="?modul=transaksi" class="nav-link text-dark <?= $active_transaksi;?>">
+            <i class="bi bi-cart-check-fill me-2 fs-2 "></i>Transaksi
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=pelanggan" class="nav-link text-white <?= $active_pelanggan;?>">
-            <i class="bi bi-people-fill me-2"></i>Data Pelanggan
+        <a href="?modul=pelanggan" class="nav-link text-dark <?= $active_pelanggan;?>">
+            <i class="bi bi-people-fill me-2 fs-2 "></i>Data Pelanggan
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=suplier" class="nav-link text-white <?= $active_suplier;?>">
-            <i class="bi bi-people-fill me-2"></i>Data Suplier
+        <a href="?modul=suplier" class="nav-link text-dark <?= $active_suplier;?>">
+            <i class="bi bi-people-fill me-2 fs-2 "></i>Data Suplier
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=barang" class="nav-link text-white <?= $active_barang;?>">
-            <i class="bi bi-box2-fill me-2"></i>Data Barang
+        <a href="?modul=barang" class="nav-link text-dark <?= $active_barang;?>">
+            <i class="bi bi-box2-fill me-2 fs-2 "></i>Data Barang
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=pembayaran" class="nav-link text-white <?= $active_pembayaran;?>">
-            <i class="bi bi-pencil-square me-2"></i>Pembayaran
+        <a href="?modul=pembayaran" class="nav-link text-dark <?= $active_pembayaran;?>">
+            <i class="bi bi-pencil-square me-2 fs-2 "></i>Pembayaran
         </a>
     </li>
     <li class="nav-item">
-        <a href="?modul=jurnal-umum" class="nav-link text-white <?= $active_jurnalumum;?>">
-            <i class="bi bi-pencil-square me-2"></i>Jurnal Umum
+        <a href="?modul=jurnal-umum" class="nav-link text-dark <?= $active_jurnalumum;?>">
+            <i class="bi bi-pencil-square me-2 fs-2 "></i>Jurnal Umum
         </a>
     </li>
 </ul>
