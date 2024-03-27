@@ -9,7 +9,7 @@
 </head>
 <style>
     h3{
-        font-family: georgia;
+        font font-family: Arial;
     }
 </style>
 <body>
@@ -18,7 +18,7 @@
             <div class="col-md-3 text-bg-dark" style="min-height:100vh">
                 <div class="text-center pt-4">
                     <i class="bi bi-bank fs-1 text-success"></i>
-                    <h3>Sistem Informasi Akuntansi</h3>
+                    <h2>Sistem Informasi Akuntansi</h2>
                 </div >
                 <div class="pt-4">
                 <?php
@@ -26,7 +26,7 @@
                 ?>
                 </div>
             </div>
-            <div class="col-md-9" style="background-color: #F8F6FA">
+            <div class="col-md-9" style="background-color : #435B76">
                 <div class="text-end p-3">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
