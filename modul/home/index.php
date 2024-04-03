@@ -8,14 +8,14 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <style>
             .alert-info {
-                border-radius: 20px;
-                padding: 20px;
+                border-radius: 10px;
+                padding: 10px;
             }
         </style>
 </head>
 <body>
         <p class="alert alert-info">
-            Selamat datang di aplikasi <strong>SISTEM INFORMASI AKUNTANSI</strong>, aplikasi ini dirancang untuk memudahkan manajemen transaksi penjualan.
+            Selamat datang di aplikasi <strong>sistem informasi akuntansi</strong>, aplikasi ini dirancang untuk memudahkan manajemen transaksi penjualan.
         </p>
 </body>
 </html>
