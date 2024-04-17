@@ -1,35 +1,29 @@
 <?php
-session_start();
-
-// Koneksi ke database
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "akuntansi";
-
-$conn = new mysqli($host, $username, $password, $database);
-
-if ($conn->connect_error) {
-  die("Koneksi gagal: " . $conn->connect_error);
-}
-
-// Ambil data dari form login
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-// Query untuk mencari pengguna dengan username dan password yang sesuai
-$query = "SELECT * FROM pengguna WHERE username='$username' AND password='$password'";
-$result = $conn->query($query);
-
-if ($result->num_rows > 0) {
-  // Jika data ditemukan, redirect ke dashboard.php
-  $_SESSION['username'] = $username;
-  header("Location: dashboard.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require_once('koneksi.php');
+    session_start();
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $query = "SELECT * FROM tbl_pengguna WHERE username='$username'";
+    $result = $koneksi->query($query);
+    $row = $result->fetch_assoc();
+    
+    if (mysqli_num_rows($result) > 0) {
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['nama_lengkap'] = $row['nama_lengkap'];
+            $_SESSION['jabatan'] = $row['jabatan'];
+            $_SESSION['hak_akses'] = $row['hak_akses'];
+            header('location:dashboard.php');
+        } else {
+            $_SESSION['pesan'] = "Username atau password tidak valid!!!";
+            header('location:index.php');
+        }
+    } else {
+        $_SESSION['pesan'] = "Username atau password tidak valid!!!";
+        header('location:index.php');
+    }
 } else {
-  // Jika tidak ditemukan, kembali ke halaman login dengan pesan error
-  $_SESSION['error'] = "Username atau password salah";
-  header("Location: login.php");
+    header('location:index.php');
 }
-
-$conn->close();
 ?>

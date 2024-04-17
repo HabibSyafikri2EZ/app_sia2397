@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+header('location:dashboard.php');
+}else{
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,3 +40,7 @@
   </div>
 </body>
 </html>
+<?php
+}
+session_destroy();
+>
