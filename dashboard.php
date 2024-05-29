@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['username'])){
+        header('location:login.php');
+    }else{
+        include_once('koneksi.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +17,7 @@
 </head>
 <style>
     h3{
-        font font-family: Arial;
+        font-family: georgia;
     }
 </style>
 <body>
@@ -17,8 +25,8 @@
         <div class="row">
             <div class="col-md-3 text-bg-dark" style="min-height:100vh">
                 <div class="text-center pt-4">
-                    <i class="bi bi-bank fs-1 text-success"></i>
-                    <h2>Sistem Informasi Akuntansi</h2>
+                    <i class="bi bi-cash-coin fs-1 text-success"></i>
+                    <h3>Sistem Informasi Akuntansi</h3>
                 </div >
                 <div class="pt-4">
                 <?php
@@ -26,16 +34,16 @@
                 ?>
                 </div>
             </div>
-            <div class="col-md-9" style="background-color : #435B76">
+            <div class="col-md-9" style="background-color: #F8F6FA">
                 <div class="text-end p-3">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle"></i>
-                            Administrator
+                            <?php echo $_SESSION['nama_lengkap'];?>
                         </button>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="?modul-profile">
+                                <a class="dropdown-item" href="?modul=profile">
                                     <i class="bi bi-person-badge-fill"></i>
                                     Profile
                                 </a>
@@ -61,3 +69,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
+<?php
+    }
+?>
