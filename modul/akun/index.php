@@ -45,7 +45,7 @@
         </thead>
         <tbody>
           <?php
-          $query = "SELECT * from akun";
+          $query = "SELECT * from tbl_akun";
           $exec = mysqli_query($koneksi, $query);
           $no = 1;
           while($data = mysqli_fetch_array($exec)){
