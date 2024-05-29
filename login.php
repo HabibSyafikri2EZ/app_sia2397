@@ -32,7 +32,6 @@ header('location:dashboard.php');
                 <input type="password" class="form-control" id="password" name="password" required>
               </div>
               <button type="submit" class="btn btn-primary">Login</button>
-              <?php echo $_SESSION['pesan'];?>
             </form>
           </div>
         </div>
