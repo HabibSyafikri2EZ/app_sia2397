@@ -5,7 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
+    $koneksi = new mysqli("localhost", "root", "", "akuntansi");
+    if ($koneksi->connect_error) {
+        die("Koneksi database gagal: " . $koneksi->connect_error);
+    }
+
     $query = "SELECT * FROM pengguna WHERE username='$username'";
     $result = $koneksi->query($query);
     $row = $result->fetch_assoc();
@@ -18,10 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['hak_akses'] = $row['hak_akses'];
             header('location: dashboard.php');
         } else {
-            $_SESSION['pesan'] = $password;
+            $_SESSION['pesan'] = "Username atau password tidak valid!!!";
             header('location:login.php');
         }
-
     } else {
         $_SESSION['pesan'] = "Username atau password tidak valid!!!";
         header('location:login.php');
