@@ -22,6 +22,7 @@ header('location:dashboard.php');
             Login
           </div>
           <div class="card-body">
+          <form action="modul/akun/aksi_akun.php?act=insert" method="post">
             <form action="autentifikasi.php" method="POST">
               <div class="form-group">
                 <label for="username">Username:</label>
@@ -33,6 +34,7 @@ header('location:dashboard.php');
               </div>
               <button type="submit" class="btn btn-primary">Login</button>
             </form>
+</form>
           </div>
         </div>
       </div>
