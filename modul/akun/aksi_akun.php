@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_GET['act'] == "insert") {
         $query = "INSERT INTO tbl_akun (nama_akun, jenis_akun, type_saldo) VALUES ('$nama_akun', '$jenis_akun', '$type_saldo')";
         $exec = mysqli_query($koneksi, $query);
-
         if ($exec) {
             $_SESSION['pesan'] = "Data akun telah ditambahkan";
             header('location:../../dashboard.php?modul=akun');
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id = $_GET['id'];
         $query = "UPDATE tbl_akun SET nama_akun='$nama_akun', jenis_akun='$jenis_akun', type_saldo='$type_saldo' WHERE id='$id'";
         $exec = mysqli_query($koneksi, $query);
-
         if ($exec) {
             $_SESSION['pesan'] = "Data akun telah diubah";
             header('location:../../dashboard.php?modul=akun');
@@ -36,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id = $_GET['id'];
         $query = "DELETE FROM tbl_akun WHERE id='$id'";
         $exec = mysqli_query($koneksi, $query);
-
         if ($exec) {
             $_SESSION['pesan'] = "Data akun telah dihapus";
             header('location:../../dashboard.php?modul=akun');
@@ -48,3 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('location:../../index.php');
     }
 }
+?>
