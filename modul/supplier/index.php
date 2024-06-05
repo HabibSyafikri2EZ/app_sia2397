@@ -1,12 +1,12 @@
-<form action="modul/suplier/aksi_suplier.php?act=insert" method="post">
+<form action="modul/supllier/aksi_supplier.php?act=insert" method="post">
  <!-- baris program yang lain -->
  </form>
 <div class="card mb-3">
     <div class="card-body">
         <div class="row">
             <div class="mb-3 col-md-6">
-                <label for="nama_suplier" class="from-label">Nama supplier</label>
-                <input type="text" class="form-label" name="nama_suplier">
+                <label for="nama_supplier" class="from-label">Nama supplier</label>
+                <input type="text" class="form-label" name="nama_supplier">
             </div>
             <div class="mb-3 col-md-6">
                 <label for="alamat" class="form-label">Alamat</label>
@@ -34,7 +34,7 @@
 </div>
 <div class="card">
     <div class="card-header">
-        <h3>Data Suplier</h3>
+        <h3>Data supplier</h3>
 </div>
 <div class="card-body">
     <div class="table-responsive">
@@ -42,7 +42,7 @@
             <thead>
                 <tr>
                   <th>#</th>
-                  <th>Nama Suplier</th>
+                  <th>Nama supplier</th>
                   <th>Alamat</th>
                   <th>Telp</th>
                   <th>Email</th>
@@ -57,7 +57,7 @@
                   <td>08123456789</td>
                   <td>mentega12@gmail.com</td>
                   <td>
-                    <a href="#editSuplier" class="text-decoration-none" data-bs-toggle="modal">
+                    <a href="#editsupplier" class="text-decoration-none" data-bs-toggle="modal">
                         <i class="bi bi-pencil-square text-success"></i>
                     </a>
                     <a hret="" class="text-decoration-none">
@@ -65,16 +65,16 @@
                     </a>
                 </td>
                 <!-- modal -->
-                <div class="modal fade" id="editSuplier" tabindex="-1" aria-labelledby="exampleModallabel" aria-hidden="true">
+                <div class="modal fade" id="editsupplier" tabindex="-1" aria-labelledby="exampleModallabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModallabel">Edit Suplier</h5>
+                            <h5 class="modal-title" id="exampleModallabel">Edit supplier</h5>
                             <button type="button" class="btn-close" data-bs-dismis="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                            <div class="mb-3">
-                            <label class="form-label" for="nama_suplier">Nama suplier</labale>
+                            <label class="form-label" for="nama_supplier">Nama supplier</labale>
                             <input type="text" claass="form-control" name="alamat" value="Jl.ICE CREAM">
                         </div>
                         <div class="mb-3">
@@ -100,7 +100,7 @@
             <td>08123456789</td>
             <td>jco123@gmail.com</td>
             <td>
-                <a href="#editSuplier" class="text-decoration-none" data-bs-toggle="modal">
+                <a href="#editsupplier" class="text-decoration-none" data-bs-toggle="modal">
                    <i class="bi bi-pencil-square text-success"></i>
                 </a>
                 <a href="" class="text-decoration-none">
@@ -113,25 +113,10 @@
      </div>
    </div>
 </div>
-<div class="row">
-    <div class="d-flex">
-        <span class="me-auto text-gray">
-            <?php
-            if(isset($_SESSION['pesan'])){
-                echo $_SESSION['pesan'];
-                unset($_SESSION['pesan']);
-            }
-            ?>
-        </span>
-        <button type="reset" class="btn btn-secondary">Reset</button>
-        <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-    </div>
-</div>
-
 <tbody>
 <!-- Data Supplier -->
 <?php
-$query = "SELECT * from tbl_supplier";
+$query = "SELECT * from supplier";
 $exec = mysqli_query($koneksi, $query);
 while($data = mysqli_fetch_array($exec)){
 ?>
@@ -145,14 +130,14 @@ while($data = mysqli_fetch_array($exec)){
 <a href="#editSupplier<?= $data['id'] ?>" class="text-decoration-none" data-bs-toggle="modal">
 <i class="bi bi-pencil-square text-success"></i>
 </a>
-<a href="modul/suplier/aksi_suplier.php?act=delete&id=<?= $data['id'] ?>" class="text-decoration-none">
+<a href="modul/supplier/aksi_supplier.php?act=delete&id=<?= $data['id'] ?>" class="text-decoration-none">
 <i class="bi bi-trash text-danger"></i>
 </a>
 </td>
 </tr>
 <!-- Modal Edit Supplier -->
 <div class="modal fade" id="editSupplier<?= $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<form action="modul/suplier/aksi_suplier.php?act=update&id=<?= $data['id'] ?>" method="post">
+<form action="modul/supplier/aksi_supplier.php?act=update&id=<?= $data['id'] ?>" method="post">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">

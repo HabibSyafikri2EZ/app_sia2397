@@ -8,8 +8,8 @@ if(!isset($_GET['modul'])){
         include_once('modul/pelanggan/index.php');
     }elseif($_GET['modul']=="akun"){
         include_once('modul/akun/index.php');
-    }elseif($_GET['modul']=="suplier"){
-        include_once('modul/suplier/index.php');
+    }elseif($_GET['modul']=="supplier"){
+        include_once('modul/supplier/index.php');
     }elseif($_GET['modul']=="barang"){
         include_once('modul/barang/index.php');
     }elseif($_GET['modul']=="pembayaran"){
@@ -17,6 +17,8 @@ if(!isset($_GET['modul'])){
     }elseif($_GET['modul']=="jurnal-umum"){
         include_once('modul/jurnal-umum/index.php');
     }elseif($_GET['modul']=="profile"){
+        include_once('modul/profile/index.php');
+    }elseif($_GET['modul']=="pengguna"){
         include_once('modul/profile/index.php');
     }else{
 ?>
