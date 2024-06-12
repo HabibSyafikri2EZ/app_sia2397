@@ -1,11 +1,11 @@
-<form action="modul/suplier/aksi_supplier.php?act=insert" method="post">
+<form action="modul/supplier/aksi_supplier.php?act=insert" method="post">
 
 <div class="card mb-3">
     <div class="card-body">
         <div class="row">
             <div class="mb-3 col-md-6">
-                <label for="nama_suplier" class="form-label">Nama suplier</label>
-                <input type="text" class="form-control" name="nama_suplier">
+                <label for="nama_supplier" class="form-label">Nama supplier</label>
+                <input type="text" class="form-control" name="nama_supplier">
             </div>
             <div class="mb-3 col-md-6">
                 <label for="alamat" class="form-label">Alamat</label>
@@ -14,8 +14,8 @@
         </div>
         <div class="row">
             <div class="mb-3 col-md-6">
-                <label for="telp" class="form-label">Telp</label>
-                <input type="text" class="form-control" name="telp">
+                <label for="telepon" class="form-label">telepon</label>
+                <input type="text" class="form-control" name="telepon">
             </div>
             <div class="mb-3 col-md-6">
                 <label for="email" class="form-label">Email</label>
@@ -43,7 +43,7 @@
 </div>
 <div class="card">
     <div class="card-header">
-        <h3>Data Suplier</h3>
+        <h3>Data supplier</h3>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -51,9 +51,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nama Suplier</th>
+                        <th>Nama supplier</th>
                         <th>Alamat</th>
-                        <th>Telp</th>
+                        <th>telepon</th>
                         <th>Email</th>
                         <th><i class="bi bi-gear-fill"></i></th>
                     </tr>
@@ -70,20 +70,20 @@
             <td><?= $no++ ?></td>
             <td><?= $data['nama_supplier'] ?></td>
             <td><?= $data['alamat'] ?></td>
-            <td><?= $data['telp'] ?></td>
+            <td><?= $data['telepon'] ?></td>
             <td><?= $data['email'] ?></td>
             <td>
-                <a href="#editSupplier<?= $data['id'] ?>" class="text-decoration-none" data-bs-toggle="modal">
+                <a href="#editSupplier<?= $data['id_supplier'] ?>" class="text-decoration-none" data-bs-toggle="modal">
                     <i class="bi bi-pencil-square text-success"></i>
                 </a>
-                <a href="modul/suplier/aksi_supplier.php?act=delete&id=<?= $data['id'] ?>" class="text-decoration-none">
+                <a href="modul/supplier/aksi_supplier.php?act=delete&id=<?= $data['id'] ?>" class="text-decoration-none">
                     <i class="bi bi-trash text-danger"></i>
                 </a>
             </td>
         </tr>
         <!-- Modal Edit Supplier -->
         <div class="modal fade" id="editSupplier<?= $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <form action="modul/suplier/aksi_supplier.php?act=update&id=<?= $data['id'] ?>" method="post">
+            <form action="modul/supplier/aksi_supplier.php?act=update&id=<?= $data['id'] ?>" method="post">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -100,8 +100,8 @@
                                 <input type="text" class="form-control" name="alamat" value="<?= $data['alamat'] ?>">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="telp">Telp</label>
-                                <input type="text" class="form-control" name="telp" value="<?= $data['telp'] ?>">
+                                <label class="form-label" for="telepon">telepon</label>
+                                <input type="text" class="form-control" name="telepon" value="<?= $data['telepon'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="email">Email</label>

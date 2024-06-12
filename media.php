@@ -24,8 +24,8 @@ if (!isset($_GET['modul'])) {
         case "barang":
             include_once('modul/barang/index.php');
             break;
-        case "suplier":
-            include_once('modul/suplier/index.php');
+        case "supplier":
+            include_once('modul/supplier/index.php');
             break;
         case "pengguna":
             include_once('modul/pengguna/index.php');

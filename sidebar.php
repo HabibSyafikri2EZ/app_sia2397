@@ -48,7 +48,7 @@ if(!isset($_GET['modul'])){
                         <a href="?modul=barang" class="nav-link text-dark text-decoration-none <?= $modul=='barang'?'active':''; ?>">Barang</a>
                         </li>
                         <li class="nav-item">
-                            <a href="?modul=supplier" class="nav-link text-dark text-decoration- none <?= $modul== 'supplier'?'active':''; ?>">Suplier</a> 
+                            <a href="?modul=supplier" class="nav-link text-dark text-decoration- none <?= $modul== 'supplier'?'active':''; ?>">Supplier</a> 
     </li>
     <li class="nav-item">
         <a href="?modul=pengguna" class="nav-link text-dark text-decoration- none <?= $modul=='pengguna'?'active':''; ?>">Pengguna</a> 
