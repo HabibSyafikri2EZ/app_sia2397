@@ -40,5 +40,5 @@ if(isset($_POST['submit'])){
                 $_SESSION['pesan'] = "Password lama tidak sesuai";
                 header('location:../../dashboard.php?modul=profile');
 }
-
+}
 ?>

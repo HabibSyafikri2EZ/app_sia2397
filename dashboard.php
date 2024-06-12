@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('location: index.php');
+    header('location: login.php');
 } else {
     include_once('koneksi.php');
 ?>
@@ -41,7 +41,9 @@ crossorigin="anonymous">
                             Administrator
                             <?php echo $_SESSION['nama_lengkap'];?>
                             </button>
-                                    Profile
+                            <a class="dropdown-item" href="modul/profile/index.php">
+                                    <i class="bi bi-door-closed-fill"></i>
+                                    <button>Profile</button>
                                 </a>
                             </li>
                             <li>
