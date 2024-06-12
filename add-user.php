@@ -1,6 +1,6 @@
 <?php
 include_once "koneksi.php";
-$password = password_hash('123', PASSWORD_BCRYPT);
+$password = password_hash('1234', PASSWORD_BCRYPT);
 $query = "INSERT INTO pengguna (
     username,
     password,

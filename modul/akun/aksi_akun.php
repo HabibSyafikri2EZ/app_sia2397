@@ -5,11 +5,12 @@ include_once('../../koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama_akun = $_POST['nama_akun'];
     $jenis_akun = $_POST['jenis_akun'];
-    $type_saldo = $_POST['type_saldo'];
-
+    $tipe_saldo = $_POST['tipe_saldo'];
+    
     if ($_GET['act'] == "insert") {
-        $query = "INSERT INTO tbl_akun (nama_akun, jenis_akun, type_saldo) VALUES ('$nama_akun', '$jenis_akun', '$type_saldo')";
+        $query = "INSERT INTO akun (nama_akun, jenis_akun, tipe_saldo) VALUES ('$nama_akun', '$jenis_akun', '$tipe_saldo')";
         $exec = mysqli_query($koneksi, $query);
+        
         if ($exec) {
             $_SESSION['pesan'] = "Data akun telah ditambahkan";
             header('location:../../dashboard.php?modul=akun');
@@ -19,8 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } elseif ($_GET['act'] == "update") {
         $id = $_GET['id'];
-        $query = "UPDATE tbl_akun SET nama_akun='$nama_akun', jenis_akun='$jenis_akun', type_saldo='$type_saldo' WHERE id='$id'";
+        $query = "UPDATE akun SET nama_akun='$nama_akun', jenis_akun='$jenis_akun', tipe_saldo='$tipe_saldo' WHERE id='$id'";
         $exec = mysqli_query($koneksi, $query);
+        
         if ($exec) {
             $_SESSION['pesan'] = "Data akun telah diubah";
             header('location:../../dashboard.php?modul=akun');
@@ -32,8 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     if ($_GET['act'] == "delete") {
         $id = $_GET['id'];
-        $query = "DELETE FROM tbl_akun WHERE id='$id'";
+        $query = "DELETE FROM akun WHERE id='$id'";
         $exec = mysqli_query($koneksi, $query);
+        
         if ($exec) {
             $_SESSION['pesan'] = "Data akun telah dihapus";
             header('location:../../dashboard.php?modul=akun');
@@ -42,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('location:../../dashboard.php?modul=akun');
         }
     } else {
-        header('location:../../index.php');
+        header('location:../../login.php');
     }
 }
 ?>

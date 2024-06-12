@@ -1,59 +1,59 @@
 <?php
 include_once "../../koneksi.php";
 session_start();
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-    if($_GET['act']=="insert"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_GET['act'] == "insert") {
         $username = $_POST['username'];
         $nama_lengkap = $_POST['nama_lengkap'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $jabatan = $_POST['jabatan'];
         $email = $_POST['email'];
         $hak_akses = $_POST['hak_akses'];
-        $query = "insert into tbl_pengguna (username, password, nama_lengkap, jabatan, email, hak_akses) values ('$username', '$password', '$nama_lengkap', '$jabatan', '$email', '$hak_akses')";
-        $exc = mysqli_query($koneksi, $query);
-        if($exc){
+        $query = "INSERT INTO pengguna (username, password, nama_lengkap, jabatan, email, hak_akses) VALUES ('$username', '$password', '$nama_lengkap', '$jabatan', '$email', '$hak_akses')";
+        $exec = mysqli_query($koneksi, $query);
+        if ($exec) {
             $_SESSION['pesan'] = "Data pengguna berhasil ditambah";
             header('location:../../dashboard.php?modul=pengguna');
-        }else{
+        } else {
             $_SESSION['pesan'] = "Data pengguna gagal ditambah";
             header('location:../../dashboard.php?modul=pengguna');
         }
-    }elseif($_GET['act']=="update"){
+    } elseif ($_GET['act'] == "update") {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $nama_lengkap = $_POST['nama_lengkap'];
         $jabatan = $_POST['jabatan'];
         $email = $_POST['email'];
         $hak_akses = $_POST['hak_akses'];
-        if(empty($password)){
-            $query = "update tbl_pengguna set nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' where username = '$username'";
-        }else{
+        if (empty($password)) {
+            $query = "UPDATE pengguna SET nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' WHERE username = '$username'";
+        } else {
             $password = password_hash($password, PASSWORD_BCRYPT);
-            $query = "update tbl_pengguna set password = '$password', nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' where username = '$username'";
+            $query = "UPDATE pengguna SET password = '$password', nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' WHERE username = '$username'";
         }
-        $exc = mysqli_query($koneksi, $query);
-        if($exc){
+        $exec = mysqli_query($koneksi, $query);
+        if ($exec) {
             $_SESSION['pesan'] = "Data pengguna berhasil diubah";
             header('location:../../dashboard.php?modul=pengguna');
-        }else{
+        } else {
             $_SESSION['pesan'] = "Data pengguna gagal diubah";
             header('location:../../dashboard.php?modul=pengguna');
         }
     }
-}else{
-    if($_GET['act']=="delete"){
+} else {
+    if ($_GET['act'] == "delete") {
         $id = $_GET['id'];
-        $query = "delete from tbl_pengguna where id = '$id'";
-        $exc = mysqli_query($koneksi, $query);
-        if($exc){
+        $query = "DELETE FROM pengguna WHERE id = '$id'";
+        $exec = mysqli_query($koneksi, $query);
+        if ($exec) {
             $_SESSION['pesan'] = "Data pengguna berhasil dihapus";
             header('location:../../dashboard.php?modul=pengguna');
-        }else{
+        } else {
             $_SESSION['pesan'] = "Data pengguna gagal dihapus";
             header('location:../../dashboard.php?modul=pengguna');
         }
-    }else{
-        header('location:../../index.php');
+    } else {
+        header('location:../../login.php');
     }
 }
 ?>
